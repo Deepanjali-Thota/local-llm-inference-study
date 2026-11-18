@@ -1,7 +1,8 @@
 # Benchmarks
 
 ## Hardware
-- Windows laptop, 16 GB RAM, CPU only (no GPU)
+- Windows laptop, Intel Core i5-1335U (10 cores / 12 threads), 16 GB RAM
+- Integrated Intel Iris Xe graphics, not used by Ollama (CPU only)
 - Ollama 0.40.16
 
 ## Benchmark conditions
