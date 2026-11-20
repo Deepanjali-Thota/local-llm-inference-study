@@ -1,0 +1,137 @@
+PS C:\Users\Deeps\Desktop\local-llm-inference-study> python compare_models.py
+
+===== llama3.2:3b =====
+OK  # 1 expected billing   got billing   2.2s 
+OK  # 2 expected billing   got billing   2.2s 
+XX  # 3 expected billing   got account   2.3s 
+OK  # 4 expected billing   got billing   2.2s 
+OK  # 5 expected billing   got billing   2.2s 
+XX  # 6 expected billing   got account   2.3s 
+OK  # 7 expected billing   got billing   2.2s 
+OK  # 8 expected billing   got billing   2.2s 
+OK  # 9 expected billing   got billing   2.5s 
+OK  #10 expected billing   got billing   2.3s 
+OK  #11 expected technical got technical 2.5s 
+OK  #12 expected technical got technical 2.4s 
+OK  #13 expected technical got technical 2.3s 
+OK  #14 expected technical got technical 2.4s 
+OK  #15 expected technical got technical 2.3s 
+OK  #16 expected technical got technical 2.2s 
+OK  #17 expected technical got technical 2.3s 
+OK  #18 expected technical got technical 2.2s 
+OK  #19 expected technical got technical 2.3s 
+OK  #20 expected technical got technical 2.3s 
+XX  #21 expected account   got technical 2.4s 
+OK  #22 expected account   got account   1.9s 
+OK  #23 expected account   got account   2.2s 
+XX  #24 expected account   got technical 2.3s 
+OK  #25 expected account   got account   2.1s 
+OK  #26 expected account   got account   2.4s 
+OK  #27 expected account   got account   2.8s 
+OK  #28 expected account   got account   2.4s 
+OK  #29 expected account   got account   2.1s 
+OK  #30 expected account   got account   2.8s 
+OK  #31 expected other     got other     2.8s 
+OK  #32 expected other     got other     2.5s 
+OK  #33 expected other     got other     2.6s 
+OK  #34 expected other     got other     2.4s 
+OK  #35 expected other     got other     2.2s 
+OK  #36 expected other     got other     2.1s 
+XX  #37 expected other     got account   2.2s 
+XX  #38 expected other     got account   2.2s 
+XX  #39 expected other     got account   2.3s 
+XX  #40 expected other     got account   2.4s 
+
+===== phi4-mini =====
+OK  # 1 expected billing   got billing   2.7s 
+OK  # 2 expected billing   got billing   2.8s 
+XX  # 3 expected billing   got account   2.4s 
+OK  # 4 expected billing   got billing   2.6s 
+OK  # 5 expected billing   got billing   2.6s 
+XX  # 6 expected billing   got account   2.9s 
+OK  # 7 expected billing   got billing   2.7s 
+OK  # 8 expected billing   got billing   3.0s 
+OK  # 9 expected billing   got billing   2.8s 
+OK  #10 expected billing   got billing   2.8s 
+OK  #11 expected technical got technical 3.0s 
+OK  #12 expected technical got technical 3.0s 
+OK  #13 expected technical got technical 2.6s 
+OK  #14 expected technical got technical 3.3s (invalid)
+OK  #15 expected technical got technical 2.6s 
+OK  #16 expected technical got technical 2.6s 
+OK  #17 expected technical got technical 3.0s 
+OK  #18 expected technical got technical 2.7s 
+OK  #19 expected technical got technical 2.8s 
+OK  #20 expected technical got technical 2.7s 
+OK  #21 expected account   got account   2.9s 
+OK  #22 expected account   got account   2.7s 
+OK  #23 expected account   got account   3.0s 
+OK  #24 expected account   got account   2.8s 
+OK  #25 expected account   got account   3.1s (invalid)
+OK  #26 expected account   got account   3.1s (invalid)
+OK  #27 expected account   got account   2.7s 
+OK  #28 expected account   got account   3.0s 
+OK  #29 expected account   got account   2.5s 
+OK  #30 expected account   got account   3.3s 
+OK  #31 expected other     got other     3.0s 
+XX  #32 expected other     got account   3.1s 
+OK  #33 expected other     got other     2.9s 
+XX  #34 expected other     got account   2.7s 
+OK  #35 expected other     got other     2.4s 
+XX  #36 expected other     got technical 3.4s 
+XX  #37 expected other     got account   3.2s 
+OK  #38 expected other     got other     2.8s 
+XX  #39 expected other     got account   2.6s 
+XX  #40 expected other     got account   2.9s 
+
+===== mistral:7b =====
+OK  # 1 expected billing   got billing   7.0s 
+OK  # 2 expected billing   got billing   7.6s (invalid)
+OK  # 3 expected billing   got billing   6.2s 
+OK  # 4 expected billing   got billing   6.3s 
+OK  # 5 expected billing   got billing   6.4s 
+XX  # 6 expected billing   got account   6.1s 
+OK  # 7 expected billing   got billing   5.7s 
+OK  # 8 expected billing   got billing   6.5s (invalid)
+OK  # 9 expected billing   got billing   6.2s 
+XX  #10 expected billing   got technical 6.4s 
+OK  #11 expected technical got technical 7.2s (invalid)
+OK  #12 expected technical got technical 7.4s 
+OK  #13 expected technical got technical 6.2s 
+OK  #14 expected technical got technical 7.1s (invalid)
+OK  #15 expected technical got technical 6.0s 
+OK  #16 expected technical got technical 6.7s 
+OK  #17 expected technical got technical 7.6s 
+OK  #18 expected technical got technical 6.6s 
+OK  #19 expected technical got technical 6.3s 
+OK  #20 expected technical got technical 7.5s 
+OK  #21 expected account   got account   7.3s 
+OK  #22 expected account   got account   5.2s 
+OK  #23 expected account   got account   5.4s 
+OK  #24 expected account   got account   5.9s 
+OK  #25 expected account   got account   6.8s 
+OK  #26 expected account   got account   6.5s (invalid)
+OK  #27 expected account   got account   6.0s 
+OK  #28 expected account   got account   6.2s 
+OK  #29 expected account   got account   6.1s 
+OK  #30 expected account   got account   6.8s 
+XX  #31 expected other     got technical 7.1s 
+OK  #32 expected other     got other     6.8s 
+OK  #33 expected other     got other     7.1s 
+OK  #34 expected other     got other     5.4s 
+OK  #35 expected other     got other     6.2s 
+XX  #36 expected other     got technical 7.3s 
+OK  #37 expected other     got other     7.1s 
+OK  #38 expected other     got other     7.1s (invalid)
+OK  #39 expected other     got other     5.8s 
+XX  #40 expected other     got account   6.3s 
+
+
+| Model | Accuracy | Hard acc. | Valid | Latency (s) | Gen tok/s | RAM (GB) |
+|---|---|---|---|---|---|---|
+| llama3.2:3b | 80% | 78% | 100% | 2.28 | 13.9 | 4.1 |
+| phi4-mini | 80% | 78% | 92% | 2.82 | 11.7 | 4.8 |
+| mistral:7b | 88% | 56% | 85% | 6.43 | 6.4 | 6.8 |
+
+Saved comparison_results.csv
+PS C:\Users\Deeps\Desktop\local-llm-inference-study> 

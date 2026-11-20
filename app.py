@@ -68,12 +68,17 @@ def call_ollama(payload):
 
 def build_prompt(ticket):
     return f"""Classify this support ticket.
-category: billing, technical, account, or other.
+
+category:
+- billing: payments, charges, refunds, invoices, receipts, pricing, discounts, plans
+- technical: bugs, errors, crashes, slowness, something not working as expected
+- account: login, password, profile, permissions, security, deleting or changing an account
+- other: feature requests, feedback, company questions, legal, partnerships, anything else
+
 priority: low, medium, or high.
 summary: at most {MAX_SUMMARY_WORDS} words, no device names or version numbers.
 
 Ticket: {ticket}"""
-
 
 # ---------- Endpoints ----------
 
