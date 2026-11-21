@@ -49,3 +49,16 @@ Task: support ticket classification, 40 manually labeled tickets (10 per categor
 
 ### Lesson
 A held-out set must use the same labeling policy as the system it tests. Write the policy first, then label against it.
+
+## Run 4: Quantization (llama3.2:3b, Q4_K_M vs Q5_K_M vs Q8_0)
+
+| Quant | Size on disk | Accuracy (40) | Accuracy (held-out 16) | Median latency (40) | Gen tok/s | RAM (GB) |
+|---|---|---|---|---|---|---|
+| Q4_K_M | 2.0 GB | 95% | 69% | 2.26s | 14.1 | 4.1 |
+| Q5_K_M | ~2.3 GB | 92.5% | 69% | 2.76s | 12.6 | 4.4 |
+| Q8_0 | ~3.4 GB | 95% | 69% | 3.66s | 9.1 | 5.5 |
+
+### Findings
+- All three quantization levels made the same errors (#6 and #10 on the original set; the same 5 held-out tickets). Q5 missed one extra ticket, within noise. Errors come from what the model learned, not from weight rounding.
+- Generation speed scaled with model size: Q8 is ~1.7x larger and ~1.6x slower (14.1 → 9.1 tok/s), consistent with generation being memory-bandwidth bound on CPU.
+- Decision: Q4_K_M. Higher precision added latency and RAM with no accuracy gain on this task.
