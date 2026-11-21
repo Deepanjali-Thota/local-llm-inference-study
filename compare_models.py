@@ -2,7 +2,7 @@ import csv
 import json
 import statistics
 import time
-
+import sys
 import requests
 from pydantic import ValidationError
 
@@ -11,9 +11,11 @@ from app import Ticket, build_prompt
 GEN_URL = "http://127.0.0.1:11434/api/generate"
 PS_URL = "http://127.0.0.1:11434/api/ps"
 MODELS = ["llama3.2:3b", "phi4-mini", "mistral:7b"]
+if len(sys.argv) > 2:
+    MODELS = sys.argv[2].split(",")
 NS = 1_000_000_000
 
-import sys
+
 
 TICKETS_FILE = sys.argv[1] if len(sys.argv) > 1 else "tickets.json"
 with open(TICKETS_FILE, encoding="utf-8") as f:
