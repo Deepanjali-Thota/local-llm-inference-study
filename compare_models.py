@@ -13,7 +13,10 @@ PS_URL = "http://127.0.0.1:11434/api/ps"
 MODELS = ["llama3.2:3b", "phi4-mini", "mistral:7b"]
 NS = 1_000_000_000
 
-with open("tickets.json", encoding="utf-8") as f:
+import sys
+
+TICKETS_FILE = sys.argv[1] if len(sys.argv) > 1 else "tickets.json"
+with open(TICKETS_FILE, encoding="utf-8") as f:
     TICKETS = json.load(f)
 
 

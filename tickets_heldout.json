@@ -1,0 +1,21 @@
+[
+  {"text": "My plan renewed today but the price jumped from $12 to $19. I don't remember agreeing to a price change—can someone explain what happened?", "category": "billing", "hard": false},
+  {"text": "why is my card being declined?? it works everywhere else and now my subscription says payment failed", "category": "billing", "hard": false},
+  {"text": "Hi, I'd like to switch from the annual plan to monthly billing when my current term ends. Could you tell me how to do that?", "category": "billing", "hard": false},
+  {"text": "I paid for Pro yesterday but my account still shows Basic and I can't use any of the Pro features. Please fix this asap", "category": "billing", "hard": true, "reason": "Although the missing Pro access could be a technical or account issue, the problem began with a paid subscription not being correctly applied, so billing is the best label."},
+
+  {"text": "Notifications stopped showing up on my Android phone after the latest update. They're enabled both in the app and in my phone settings.", "category": "technical", "hard": false},
+  {"text": "The desktop app keeps saying 'Unable to sync' but the web version has all my latest changes. restarted twice no luck", "category": "technical", "hard": false},
+  {"text": "When I click the calendar integration button nothing happens. I'm on Chrome 142 on Windows and already tried disabling my extensions.", "category": "technical", "hard": false},
+  {"text": "I accepted an invite to my company's workspace but every project says I don't have permission to open it. My manager says I'm already added to the right team.", "category": "technical", "hard": true, "reason": "This could be an account-permissions issue, but the account appears correctly assigned and the unexpected access behavior suggests a technical problem."},
+
+  {"text": "I changed companies and need to update the email address connected to my profile, but the old work email is no longer accessible. How can I change it?", "category": "account", "hard": false},
+  {"text": "someone logged into my account from a device i dont recognize!!! I signed out all sessions but what else should I do", "category": "account", "hard": false},
+  {"text": "Could you please change the owner of our workspace from me to our operations manager? I can add her as an admin, but I don't see an option to transfer ownership.", "category": "account", "hard": false},
+  {"text": "My subscription is active but when I sign in with Apple it creates a completely separate profile with no paid plan attached. I think my accounts got mixed up somehow.", "category": "account", "hard": true, "reason": "The paid plan makes billing relevant, but the core issue is that different sign-in methods are creating or linking separate user identities, making account the best label."},
+
+  {"text": "Can you add a way to organize projects into folders inside folders? Once you have 50+ projects the current list gets pretty chaotic.", "category": "other", "hard": false},
+  {"text": "Hi! Do you have a public roadmap showing which features are planned for the next few months? We're evaluating whether to roll this out to our whole team.", "category": "other", "hard": false},
+  {"text": "Is there a limit on how many collaborators I can invite to one workspace on the Business plan? I couldn't find a clear answer in the help center.", "category": "other", "hard": false},
+  {"text": "We need to increase our workspace from 25 to around 80 users next month. The admin page only shows our current plan—who do I talk to about supporting a team that size and what options are available?", "category": "other", "hard": true, "reason": "This could be considered billing because a larger plan may affect pricing, but the customer's primary request is information about plan capacity and available options rather than a billing problem."}
+]
