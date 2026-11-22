@@ -12,6 +12,9 @@ Running open-source LLMs locally on a CPU-only laptop with Ollama: measuring spe
 | phi4-mini | 98% | 88% | 3.1s | 11.7 | 4.8 GB |
 | mistral:7b | 95% | 88% | 6.6s | 5.9 | 6.8 GB |
 
+
+![Accuracy vs latency](tradeoff.png)
+
 ## What I found
 
 - **Prompt beat model size:** adding category definitions raised accuracy +15–18 points; moving 3B → 7B gave +8.
