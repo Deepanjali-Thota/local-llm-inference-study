@@ -87,7 +87,14 @@ def health():
     return {"status": "ok"}
 
 
-@app.post("/generate", response_model=GenerateResponse)
+@app.post(
+    "/generate",
+    response_model=GenerateResponse,
+    responses={
+        503: {"description": "Ollama is not running"},
+        504: {"description": "Model took too long to respond"},
+    },
+)
 def generate(req: GenerateRequest):
     start = time.perf_counter()
     data = call_ollama({
@@ -105,7 +112,15 @@ def generate(req: GenerateRequest):
     )
 
 
-@app.post("/classify", response_model=ClassifyResponse)
+@app.post(
+    "/classify",
+    response_model=ClassifyResponse,
+    responses={
+        502: {"description": "Model output failed validation after all retries"},
+        503: {"description": "Ollama is not running"},
+        504: {"description": "Model took too long to respond"},
+    },
+)
 def classify(req: ClassifyRequest, max_attempts: int = 2):
     start = time.perf_counter()
     prompt = build_prompt(req.ticket)
