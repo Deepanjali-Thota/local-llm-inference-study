@@ -62,3 +62,14 @@ A held-out set must use the same labeling policy as the system it tests. Write t
 - All three quantization levels made the same errors (#6 and #10 on the original set; the same 5 held-out tickets). Q5 missed one extra ticket, within noise. Errors come from what the model learned, not from weight rounding.
 - Generation speed scaled with model size: Q8 is ~1.7x larger and ~1.6x slower (14.1 → 9.1 tok/s), consistent with generation being memory-bandwidth bound on CPU.
 - Decision: Q4_K_M. Higher precision added latency and RAM with no accuracy gain on this task.
+
+### phi4-mini: Q4_K_M vs Q8_0 (held-out 16 tickets, same run)
+
+| Quant | Accuracy | Valid | Median latency | Gen tok/s | RAM (GB) |
+|---|---|---|---|---|---|
+| Q4_K_M | 88% | 81% | 2.72s | 14.0 | 4.8 |
+| Q8_0 | 88% | 81% | 4.86s | 9.0 | 6.4 |
+
+- Q8 produced identical outputs to Q4 on every ticket (same 2 errors, same 3 invalid summaries), while running 1.8x slower and using 1.6 GB more RAM.
+- Same result as llama3.2:3b across two model families: for this task, Q4_K_M is the right trade-off.
+- Note: phi4-mini Q4 latency varied between sessions (3.41s vs 2.72s) due to laptop load; comparisons are made within a single run.
