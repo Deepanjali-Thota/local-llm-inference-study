@@ -1,5 +1,7 @@
 # Local LLM Inference Study
 
+![tests](https://github.com/deepanjali-thota/local-llm-inference-study/actions/workflows/tests.yml/badge.svg)
+
 Running open-source LLMs locally on a CPU-only laptop with Ollama: measuring speed, enforcing structured output, and choosing a model with data.
 
 **Hardware:** Intel i5-1335U, 16 GB RAM, no GPU · **Models:** llama3.2:3b, phi4-mini, mistral:7b (Q4_K_M)
