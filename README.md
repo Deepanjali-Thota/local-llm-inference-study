@@ -17,6 +17,8 @@ Running open-source LLMs locally on a CPU-only laptop with Ollama: measuring spe
 
 ![Accuracy vs latency](tradeoff.png)
 
+**Recommendation:** phi4-mini, which matched mistral:7b on unseen tickets (88%) at half the latency and 2 GB less RAM.
+
 ## What I found
 
 - **Prompt beat model size:** adding category definitions raised accuracy +15–18 points; moving 3B → 7B gave +8.
@@ -24,7 +26,7 @@ Running open-source LLMs locally on a CPU-only laptop with Ollama: measuring spe
 - **Format ≠ correctness:** schema-constrained decoding took valid JSON from 0/5 to 5/5, but answers could still be wrong.
 - **Prevention beat retry:** stating a rule in the prompt fixed 100% of violations; feedback retries fixed 0/2 and sometimes broke correct fields.
 - **Temperature 0 ≠ identical output:** prompt-cache numerics changed near-tied words between runs.
-- **Quantization:** Q8 was ~1.6x slower than Q4 with no accuracy gain.
+- **Quantization:** Q8 was 1.6–1.8x slower than Q4 with identical classifications, on both llama3.2:3b and phi4-mini.
 - **Cold start:** ~12x slower than warm (4.2s vs 0.36s TTFT).
 - **Windows `localhost` bug:** IPv6 fallback added ~2s to every request; `127.0.0.1` fixed it.
 
