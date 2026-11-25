@@ -114,4 +114,4 @@ with open("results/comparison_results.csv", "w", newline="", encoding="utf-8") a
     writer.writeheader()
     writer.writerows(all_rows)
 
-print("\nSaved comparison_results.csv")
+print("\nSaved results/comparison_results.csv")

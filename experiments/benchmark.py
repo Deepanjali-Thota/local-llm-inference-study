@@ -68,9 +68,9 @@ print(f"Median TTFT (cached prompt): {statistics.median(r['ttft'] for r in repea
 print(f"Median gen tok/s: {statistics.median(r['gen_tps'] for r in results):.1f}")
 
 
-with open("results.csv", "w", newline="") as f:
+with open("results/results.csv", "w", newline="") as f:
     writer = csv.DictWriter(f, fieldnames=["prompt", "run", "ttft", "total", "tokens", "gen_tps"])
     writer.writeheader()
     writer.writerows(results)
 
-print("Saved results.csv")
+print("Saved results/results.csv")
