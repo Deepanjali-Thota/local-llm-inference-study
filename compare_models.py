@@ -17,7 +17,7 @@ NS = 1_000_000_000
 
 
 
-TICKETS_FILE = sys.argv[1] if len(sys.argv) > 1 else "tickets.json"
+TICKETS_FILE = sys.argv[1] if len(sys.argv) > 1 else "data/tickets.json"
 with open(TICKETS_FILE, encoding="utf-8") as f:
     TICKETS = json.load(f)
 
@@ -109,7 +109,7 @@ for s in summary:
           f"{s['valid_rate']:.0%} | {s['median_latency']:.2f} | "
           f"{s['median_tps']:.1f} | {s['ram_gb']:.1f} |")
 
-with open("comparison_results.csv", "w", newline="", encoding="utf-8") as f:
+with open("results/comparison_results.csv", "w", newline="", encoding="utf-8") as f:
     writer = csv.DictWriter(f, fieldnames=all_rows[0].keys())
     writer.writeheader()
     writer.writerows(all_rows)

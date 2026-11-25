@@ -14,7 +14,7 @@ Running open-source LLMs locally on a CPU-only laptop with Ollama: measuring spe
 | phi4-mini | 98% | 94% (CI 83–98%) | 3.1s | 11.7 | 4.8 GB |
 | mistral:7b | 95% | 90% (CI 78–95%) | 6.6s | 5.9 | 6.8 GB |
 
-![Accuracy vs latency](tradeoff.png)
+![Accuracy vs latency](results/tradeoff.png)
 
 **Recommendation:** phi4-mini, narrowly. It was best or tied on all three test sets, at half of mistral:7b's latency and 2 GB less RAM. Confidence intervals overlap, so llama3.2:3b (fastest, 100% valid output) is equally defensible when latency matters most.
 
@@ -31,9 +31,9 @@ Running open-source LLMs locally on a CPU-only laptop with Ollama: measuring spe
 
 ## Project phases
 
-1. **Inference benchmarks** → [BENCHMARKS.md](BENCHMARKS.md): TTFT, tokens/sec, cold vs warm start
-2. **Structured output** → [STRUCTURED_OUTPUT.md](STRUCTURED_OUTPUT.md): JSON schema, Pydantic validation, retry, temperature study
-3. **Model comparison** → [MODEL_COMPARISON.md](MODEL_COMPARISON.md): 3 models, held-out tests, label policy ([LABEL_POLICY.md](LABEL_POLICY.md)), quantization
+1. **Inference benchmarks** → [BENCHMARKS.md](docs/BENCHMARKS.md): TTFT, tokens/sec, cold vs warm start
+2. **Structured output** → [STRUCTURED_OUTPUT.md](docs/STRUCTURED_OUTPUT.md): JSON schema, Pydantic validation, retry, temperature study
+3. **Model comparison** → [MODEL_COMPARISON.md](docs/MODEL_COMPARISON.md): 3 models, held-out tests, label policy ([LABEL_POLICY.md](docs/LABEL_POLICY.md)), quantization
 
 ## Run it
 
@@ -45,3 +45,5 @@ python compare_models.py        # model comparison
 ```
 
 **API endpoints:** `GET /health` · `POST /generate` (free text) · `POST /classify` (validated JSON ticket triage with retry)
+
+Experiment scripts from Phases 1–2 are in `experiments/` (run from the repo root, e.g. `python experiments/benchmark.py`). Test sets are in `data/`, raw results and logs in `results/`.
